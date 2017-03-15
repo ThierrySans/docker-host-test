@@ -6,6 +6,6 @@ app.get('/', function (req, res, next) {
 });
 
 var http = require("http");
-http.createServer(app).listen(3000, function(){
-    console.log('HTTP on port 3000');
+http.createServer(app).listen(80, function(){
+    console.log('HTTP on port 80');
 });
