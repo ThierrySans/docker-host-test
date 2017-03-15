@@ -5,5 +5,5 @@ COPY ./app /home/nodejs/app
 WORKDIR /home/nodejs/app
 RUN npm install --production
 
-EXPOSE 80
+EXPOSE 3000
 CMD node app.js
