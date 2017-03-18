@@ -7,7 +7,7 @@ app.use(function (req, res, next){
 });
 
 app.get('/', function (req, res, next) {
-    res.end("hello world!");
+    res.end("It works and it gets updated!");
 });
 
 var http = require("http");
