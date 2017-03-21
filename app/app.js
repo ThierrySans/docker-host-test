@@ -7,7 +7,7 @@ app.use(function (req, res, next){
 });
 
 app.get('/', function (req, res, next) {
-    res.end("It works and it gets updated!");
+    res.end("Now works with HTTPS!");
 });
 
 // var http = require("http");
