@@ -6,4 +6,4 @@ WORKDIR /home/nodejs/app
 RUN npm install --production
 
 EXPOSE 3000
-CMD node app.js
+CMD NODE_ENV=production node app.js
