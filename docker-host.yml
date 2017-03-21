@@ -1,4 +1,4 @@
 domain: example.com
 ssl: 
-    - cert: /server.crt 
-    - key: /server.key
+    cert: /server.crt 
+    key: /server.key
