@@ -1,3 +1,9 @@
 ssl: 
     cert: /server.crt 
     key: /server.key
+    
+options:
+    - mongo:
+    - redis:
+    - mysql:
+        - root: pas4root
