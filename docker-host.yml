@@ -3,7 +3,7 @@ ssl:
     key: /server.key
     
 options:
-    mongodb:
+    mongo:
     redis:
     mysql:
         root: pas4root
