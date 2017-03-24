@@ -16,9 +16,9 @@ app.use(function (req, res, next){
 
 var testFile = function(callback){
     fs.writeFile("/home/uploads/myFile.txt", "This text is from a local file!", function(err) {
-        if (err) return callback(err.message, null);
+        if (err) return callback("write: " + err.message, null);
         fs.readFile("/home/uploads/myFile.txt", function(err, res){
-            if (err) return callback(err.message, null);
+            if (err) return callback("read: " + err.message, null);
             return callback(null, res);
         });
     }); 
