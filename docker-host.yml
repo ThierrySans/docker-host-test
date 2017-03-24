@@ -1,3 +1,4 @@
+mount: /home/uploads
 ssl: 
     cert: /server.crt 
     key: /server.key
