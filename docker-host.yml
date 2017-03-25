@@ -7,4 +7,4 @@ options:
     mongo:
     redis:
     mysql:
-        root: pas4root
+        root: pass4root
