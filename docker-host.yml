@@ -1,4 +1,4 @@
-mount: /home/uploads
+mount: /home/nodejs/uploads
 ssl: 
     cert: /server.crt 
     key: /server.key
