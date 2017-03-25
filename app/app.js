@@ -4,6 +4,16 @@ var express = require('express')
 var app = express();
 var async = require('async');
 
+if (app.get('env') === 'production'){ 
+    var mongoServer = 'mongo';
+    var redisServer = 'redis';
+    var mysqlServer = 'mysql';
+}else{
+    var mongoServer = 'localhost';
+    var redisServer = 'localhost';
+    var mysqlServer = 'localhost';
+}
+
 /* **********
 *** Mount ***
 ************* */
@@ -28,7 +38,7 @@ var testFile = function(callback){
 // persistence: -v /path/to/data:/data
 
 var mongo = require('mongodb').MongoClient;
-mongo.connect("mongodb://localhost:27017/test", function(err, db) {
+mongo.connect('mongodb://' + mongoServer + ':27017/test', function(err, db) {
     if (err) return console.log(err);
     console.log("Mongo database connected");
     collection = db.collection('test');
@@ -52,7 +62,7 @@ var testMongo = function(callback){
 // persistence: -v /path/to/data:/var/lib/mysql
 
 var mysql = require('mysql').createConnection({
-  host     : 'localhost',
+  host     :  mysqlServer,
   user     : 'root',
   password : 'pass4root'
 });
@@ -94,7 +104,7 @@ var testMySQL = function(callback){
 // docker run --name redis -p 6379:6379 -d redis redis-server --appendonly yes
 // persistence: -v /path/to/data:/data
 
-var redis = require('redis').createClient();
+var redis = require('redis').createClient({host: redisServer});
 redis.on('ready',function() {
      console.log("Redis database connected");  
 })
