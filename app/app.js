@@ -69,7 +69,6 @@ var mysql = require('mysql').createConnection({
 
 mysql.connect(function(err){
     if (err) return console.log(err);
-    console.log("MySQL connected");
     var queries = [ 
         'CREATE DATABASE IF NOT EXISTS mydb', 
         'USE mydb',
@@ -83,7 +82,7 @@ mysql.connect(function(err){
     };
     async.mapSeries(queries, run, function(err, res){
         if (err) return console.log(err);
-        console.log("MySQL database ready");
+        console.log("MySQL connected");
     });
 });
 
